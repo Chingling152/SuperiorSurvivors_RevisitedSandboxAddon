@@ -55,8 +55,39 @@ Sandbox_EN = {
 		Sandbox_SuperiorSurvivors_PresetSurvivors = "Disable All Pre-set/Unique Survivors",
 			Sandbox_SuperiorSurvivors_PresetSurvivors_tooltip = "Disable All Pre-set/Unique Survivors",
 
-	Sandbox_SuperiorSurvivorsAi = "Superior Survivors - A.I.",
+	Sandbox_SuperiorSurvivorsAi = "Superior Survivors - AI",
 
+		Sandbox_SuperiorSurvivors_Friendliness = "Survivor Friendliness",
+			Sandbox_SuperiorSurvivors_Friendliness_tooltip = This defines how easy it is to get a random survivor to join your team.\n Offering more gifts increase the chance of party invite acceptance, but each time you bug them with an invite, chance also goes down. So spamming invites does not do much good.
+			Sandbox_SuperiorSurvivors_Friendliness_option1 = "Desperate for Human Contact",
+			Sandbox_SuperiorSurvivors_Friendliness_option2 = "Very Friendly",
+			Sandbox_SuperiorSurvivors_Friendliness_option3 = "Neutral",
+			Sandbox_SuperiorSurvivors_Friendliness_option4 = "Friendly", 
+			Sandbox_SuperiorSurvivors_Friendliness_option5 = "Mean",
+			Sandbox_SuperiorSurvivors_Friendliness_option6 = "Very Mean",
+		
+		Sandbox_SuperiorSurvivors_Bravery = "Survivor Bravery",
+			Sandbox_SuperiorSurvivors_Bravery_tooltip = "Determines how likely Survivors are to fight, rather than flee or avoid.",
+			Sandbox_SuperiorSurvivors_Bravery_option1 = "Cowardly",
+			Sandbox_SuperiorSurvivors_Bravery_option2 = "Normal",
+			Sandbox_SuperiorSurvivors_Bravery_option3 = "Brave",
+			Sandbox_SuperiorSurvivors_Bravery_option4 = "Very Brave",
+
+		Sandbox_SuperiorSurvivors_NoHunger = "Survivor Hunger & Thirst",
+			Sandbox_SuperiorSurvivors_NoHunger_tooltip = "If Off survivors will never get hungery or thirsty. If On they will, though they will make attempts to find what they need on thier own.",
+
+		Sandbox_SuperiorSurvivors_FollowGlobalRange = "NPC - Follower Sprint Range",
+			Sandbox_SuperiorSurvivors_FollowGlobalRange_tooltip = "This controls the 'follow' command, giving you the ability for NPCs to run or walk when they are x distance from you. (Instead of previously you would need to call them closer).\n\n This option may warrent unexpected results, and needs feedback. (Do not forget you can also press the + and - hotkeys (right side of the keyboard) to bring a follower closer/further from/to you.) \n(also, if you bring them to distance '0' they will act weird) "
+
+		Sandbox_SuperiorSurvivors_SurvivorBases = "Survivor Bases",
+			Sandbox_SuperiorSurvivors_SurvivorBases_tooltip = "Wild Survivors will set up their own bases",
+
+		Sandbox_SuperiorSurvivors_SafeBases = "Safe Base",
+			Sandbox_SuperiorSurvivors_SafeBases_tooltip = "Wild Survivors will avoid your marked base",
+	
+		Sandbox_SuperiorSurvivors_PerceptionBonus = "[Experimental] NPC - Perception Boost",
+			Sandbox_SuperiorSurvivors_PerceptionBonus_tooltip = "This option should help NPCs 'know' when hostile things are close to them when it seems like they 'should have known'.\n (This option isn't fully tested but deemed decent results.)"
+	
 	Sandbox_SuperiorSurvivorsCombat = "Superior Survivors - Combat",
 	Sandbox_SuperiorSurvivorsRaiders = "Superior Survivors - Raiders",
 	Sandbox_SuperiorSurvivorsMisc = "Superior Survivors - Misc.",
