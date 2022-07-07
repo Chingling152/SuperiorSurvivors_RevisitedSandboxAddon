@@ -1,0 +1,167 @@
+VERSION = 1,
+
+option SuperiorSurvivorsSpawn.SpawnRate
+{
+	type = enum, numValues = 11, default = 6,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_SpawnRate_label,
+	valueTranslation = SuperiorSurvivors_SpawnRate,
+}
+
+option SuperiorSurvivorsSpawn.AltSpawnRate
+{
+	type = enum, numValues = 7, default = 3,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_AltSpawnRate_label,
+	valueTranslation = SuperiorSurvivors_AltSpawnRate,
+}
+
+option SuperiorSurvivorsSpawn.AltSpawnChance
+{
+	type = integer, min = 0, max = 100, default = 10,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_AltSpawnChance_label,
+}
+
+option SuperiorSurvivorsSpawn.AltSpawnRateGroupSize
+{
+	type = enum, numValues = 7, default = 1,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_AltSpawnRateGroupSize_label,
+	valueTranslation = SuperiorSurvivors_AltSpawnRateGroupSize,
+}
+
+option SuperiorSurvivorsSpawn.GunChance
+{
+	type = integer, min = 0, max = 100, default = 50,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_GunChance_label,
+}
+
+option SuperiorSurvivorsSpawn.MeleeChance
+{
+	type = integer, min = 0, max = 100, default = 50,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_MeleeChance_label,
+}
+
+option SuperiorSurvivorsSpawn.HostileChance
+{
+	type = integer, min = 0, max = 100, default = 25,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_HostileChance_label,
+}
+
+option SuperiorSurvivorsSpawn.SpawnWithWife
+{
+	type = boolean, default = false,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_SpawnWithWife_label,
+}
+
+option SuperiorSurvivorsSpawn.ReadyForBattle
+{
+	type = boolean, default = false,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_ReadyForBattle_label,
+}
+
+option SuperiorSurvivorsSpawn.PresetSurvivors
+{
+	type = boolean, default = false,
+	page = SuperiorSurvivorsSpawn, translation = SuperiorSurvivors_PresetSurvivors_label,
+}
+
+option SuperiorSurvivorsAi.Friendliness
+{
+	type = enum, numValues = 5, default = 3,
+	page = SuperiorSurvivorsAi, translation = SuperiorSurvivors_Friendliness_label,
+	valueTranslation = SuperiorSurvivors_Friendliness,
+}
+
+option SuperiorSurvivorsAi.Bravery
+{
+	type = enum, numValues = 5, default = 3,
+	page = SuperiorSurvivorsAi, translation = SuperiorSurvivors_Bravery_label,
+	valueTranslation = SuperiorSurvivors_Bravery,
+}
+
+option SuperiorSurvivorsAi.NoHunger
+{
+	type = enum, numValues = 5, default = 3,
+	page = SuperiorSurvivorsAi, translation = SuperiorSurvivors_NoHunger_label,
+	valueTranslation = SuperiorSurvivors_NoHunger,
+}
+
+option SuperiorSurvivorsAi.FollowGlobalRange
+{
+	type = integer, min = 2, max = 10, default = 5,
+	page = SuperiorSurvivorsAi, translation = SuperiorSurvivors_FollowGlobalRange_label,
+}
+
+option SuperiorSurvivorsAi.SurvivorBases
+{
+	type = boolean, default = true,
+	page = SuperiorSurvivorsAi, translation = SuperiorSurvivors_SurvivorBases_label,
+}
+
+option SuperiorSurvivorsAi.SafeBases
+{
+	type = boolean, default = false,
+	page = SuperiorSurvivorsAi, translation = SuperiorSurvivors_SafeBases_label,
+}
+
+option SuperiorSurvivorsAi.PerceptionBonus
+{
+	type = boolean, default = false,
+	page = SuperiorSurvivorsAi, translation = SuperiorSurvivors_PerceptionBonus_label,
+}
+
+option SuperiorSurvivorsCombat.ForcePvp
+{
+	type = boolean, default = true,
+	page = SuperiorSurvivorsCombat, translation = SuperiorSurvivors_ForcePvp_label,
+}
+
+option SuperiorSurvivorsCombat.HostileMaxChance
+{
+	type = integer, min = 0, max = 100, default = 75,
+	page = SuperiorSurvivorsCombat, translation = SuperiorSurvivors_HostileMaxChance_label,
+}
+
+option SuperiorSurvivorsCombat.InfiniteAmmo
+{
+	type = boolean, default = false,
+	page = SuperiorSurvivorsCombat, translation = SuperiorSurvivors_InfiniteAmmo_label,
+}
+
+option SuperiorSurvivorsRaiders.RaidersAfter
+{
+	type = enum, numValues = 22, default = 6,
+	page = SuperiorSurvivorsRaiders, translation = SuperiorSurvivors_RaidersAfter_label,
+	valueTranslation = SuperiorSurvivors_RaidersAfter,
+}
+
+option SuperiorSurvivorsRaiders.RaidersGuaranteed
+{
+	type = enum, numValues = 23, default = 6,
+	page = SuperiorSurvivorsRaiders, translation = SuperiorSurvivors_RaidersGuaranteed_label,
+	valueTranslation = SuperiorSurvivors_RaidersGuaranteed,
+}
+
+option SuperiorSurvivorsRaiders.RaidersChance
+{
+	type = enum, numValues = 5, default = 3,
+	page = SuperiorSurvivorsRaiders, translation = SuperiorSurvivors_RaidersChance_label,
+	valueTranslation = SuperiorSurvivors_RaidersChance,
+}
+
+option SuperiorSurvivorsMisc.DisplayName
+{
+	type = enum, numValues = 7, default = 1,
+	page = SuperiorSurvivorsMisc, translation = SuperiorSurvivors_DisplayName_label,
+	valueTranslation = SuperiorSurvivors_DisplayName,
+}
+
+option SuperiorSurvivorsMisc.DisplayHostile
+{
+	type = boolean, default = true,
+	page = SuperiorSurvivorsMisc, translation = SuperiorSurvivors_DisplayHostile_label,
+}
+
+option SuperiorSurvivorsMisc.RoleplayMessage
+{
+	type = boolean, default = true,
+	page = SuperiorSurvivorsMisc, translation = SuperiorSurvivors_RoleplayMessage_label,
+}
