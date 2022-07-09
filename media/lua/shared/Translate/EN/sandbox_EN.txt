@@ -7,13 +7,14 @@ Sandbox_EN = {
 			Sandbox_SuperiorSurvivors_SpawnRate_option2 = "Ultra Low",
 			Sandbox_SuperiorSurvivors_SpawnRate_option3 = "Extremely Low",
 			Sandbox_SuperiorSurvivors_SpawnRate_option4 = "Very Low",
-			Sandbox_SuperiorSurvivors_SpawnRate_option5 = "Slightly Lower",
-			Sandbox_SuperiorSurvivors_SpawnRate_option6 = "Normal",
-			Sandbox_SuperiorSurvivors_SpawnRate_option7 = "Slightly Higher",
-			Sandbox_SuperiorSurvivors_SpawnRate_option8 = "High",
-			Sandbox_SuperiorSurvivors_SpawnRate_option9 = "Very High",
-			Sandbox_SuperiorSurvivors_SpawnRate_option10 = "Extremely High",
-			Sandbox_SuperiorSurvivors_SpawnRate_option11 = "Ultra High",
+			Sandbox_SuperiorSurvivors_SpawnRate_option5 = "Low",
+			Sandbox_SuperiorSurvivors_SpawnRate_option6 = "Slightly Lower",
+			Sandbox_SuperiorSurvivors_SpawnRate_option7 = "Normal",
+			Sandbox_SuperiorSurvivors_SpawnRate_option8 = "Slightly Higher",
+			Sandbox_SuperiorSurvivors_SpawnRate_option9 = "High",
+			Sandbox_SuperiorSurvivors_SpawnRate_option10 = "Very High",
+			Sandbox_SuperiorSurvivors_SpawnRate_option11 = "Extremely High",
+			Sandbox_SuperiorSurvivors_SpawnRate_option12 = "Ultra High",
 
 		Sandbox_SuperiorSurvivors_AltSpawnRate = "Alt Spawning",
 			Sandbox_SuperiorSurvivors_AltSpawnRate_tooltip = "Alt Spawning hourly is a new type of spawning method for NPCs to spawn. How many groups do you want to spawn around you every in game hour? 'Groups' will contain NPCs inside to spawn around you off screen every hour - (Determined by you in the other settings). You can use this spawning method along with 'NPC spawn rate', but effects may differ on performance. Turning this setting 'OFF' will turn off the other settings as well. Read the descriptions on the other Alt spawning options to know more. "
@@ -61,8 +62,8 @@ Sandbox_EN = {
 			Sandbox_SuperiorSurvivors_Friendliness_tooltip = This defines how easy it is to get a random survivor to join your team.\n Offering more gifts increase the chance of party invite acceptance, but each time you bug them with an invite, chance also goes down. So spamming invites does not do much good.
 			Sandbox_SuperiorSurvivors_Friendliness_option1 = "Desperate for Human Contact",
 			Sandbox_SuperiorSurvivors_Friendliness_option2 = "Very Friendly",
-			Sandbox_SuperiorSurvivors_Friendliness_option3 = "Neutral",
-			Sandbox_SuperiorSurvivors_Friendliness_option4 = "Friendly", 
+			Sandbox_SuperiorSurvivors_Friendliness_option3 = "Friendly", 
+			Sandbox_SuperiorSurvivors_Friendliness_option4 = "Neutral",
 			Sandbox_SuperiorSurvivors_Friendliness_option5 = "Mean",
 			Sandbox_SuperiorSurvivors_Friendliness_option6 = "Very Mean",
 		
@@ -77,7 +78,7 @@ Sandbox_EN = {
 			Sandbox_SuperiorSurvivors_NoHunger_tooltip = "If Off survivors will never get hungery or thirsty. If On they will, though they will make attempts to find what they need on thier own.",
 
 		Sandbox_SuperiorSurvivors_FollowGlobalRange = "NPC - Follower Sprint Range",
-			Sandbox_SuperiorSurvivors_FollowGlobalRange_tooltip = "This controls the 'follow' command, giving you the ability for NPCs to run or walk when they are x distance from you. (Instead of previously you would need to call them closer).\n\n This option may warrent unexpected results, and needs feedback. (Do not forget you can also press the + and - hotkeys (right side of the keyboard) to bring a follower closer/further from/to you.) \n(also, if you bring them to distance '0' they will act weird) "
+			Sandbox_SuperiorSurvivors_FollowGlobalRange_tooltip = "This controls the 'follow' command, giving you the ability for NPCs to run or walk when they are x distance from you. (Instead of previously you would need to call them closer).\n\n This option may warrent unexpected results, and needs feedback. (Do not forget you can also press the + and - hotkeys (right side of the keyboard) to bring a follower closer/further from/to you. Also, if you bring them to distance '0' they will act weird) "
 
 		Sandbox_SuperiorSurvivors_SurvivorBases = "Survivor Bases",
 			Sandbox_SuperiorSurvivors_SurvivorBases_tooltip = "Wild Survivors will set up their own bases",
@@ -89,7 +90,86 @@ Sandbox_EN = {
 			Sandbox_SuperiorSurvivors_PerceptionBonus_tooltip = "This option should help NPCs 'know' when hostile things are close to them when it seems like they 'should have known'.\n (This option isn't fully tested but deemed decent results.)"
 	
 	Sandbox_SuperiorSurvivorsCombat = "Superior Survivors - Combat",
-	Sandbox_SuperiorSurvivorsRaiders = "Superior Survivors - Raiders",
-	Sandbox_SuperiorSurvivorsMisc = "Superior Survivors - Misc.",
-}
 
+		Sandbox_SuperiorSurvivors_ForcePvp = "PVP Mode"
+			Sandbox_SuperiorSurvivors_ForcePvp_tooltip = "Previously in the settings lua, this allows you to turn on PVP mode without having to goto the settings.lua file to do so.\n\n This DOES NOT make it where hostile NPCs can't hit you. So setting this to 'off' will still force PVP on when encountering hostile NPCs. This setting was requested a few times so that, if you don't wish to press the pvp button on the bottom right of your screen every time you load into your game, now you don't have to."
+
+		Sandbox_SuperiorSurvivors_HostileMaxChance = "NPC - Hostile Over Time (%)"
+			Sandbox_SuperiorSurvivors_HostileMaxChance_tooltip = "Chance to be hostile increases over time, but it will cap at this % and never go above this % Unsure if this option still works."
+
+		Sandbox_SuperiorSurvivors_InfiniteAmmo = "Survivor Infinite Ammo"
+			Sandbox_SuperiorSurvivors_InfiniteAmmo_tooltip = "If on Survivors do not neeed ammo to use guns, and never run out of ammo.\nIf Off survivors need rounds or boxes in thier inventory to shoot guns. And can be given more ammo via right click menu, and will attempt to find ammo near by when they run out of ammo."
+
+	Sandbox_SuperiorSurvivorsRaiders = "Superior Survivors - Raiders",
+
+		Sandbox_SuperiorSurvivors_RaidersGuaranteed = "How Often"
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_tooltip 	=	"If it is past the Raiders start date, and Raiders event has not happened for this amount of time. Raiders will be spawned after this amount of time passes.",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option1 	=	"Every 5 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option2 	= "Every 10 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option3 	= "Every 15 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option4 	= "Every 20 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option5 	= "Every 25 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option6 	= "Every 30 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option7 	= "Every 35 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option8 	= "Every 40 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option9 	= "Every 45 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option10 	= "Every 50 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option11 	= "Every 55 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option12 	=	"Every 60 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option13 	=	"Every 65 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option14 	=	"Every 75 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option15 	=	"Every 70 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option16 	=	"Every 80 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option17 	=	"Every 85 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option18 	=	"Every 90 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option19 	=	"Every 95 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option20 	=	"Every 100 Days",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option21 	=	"Every Day!",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option22 	=	"Every Hour!",
+			Sandbox_SuperiorSurvivors_RaidersGuaranteed_option23 	= "Every 10 Minutes!",
+
+		Sandbox_SuperiorSurvivors_RaidersAfter = "After Day"
+			Sandbox_SuperiorSurvivors_RaidersAfter_tooltip 	= "Raiders Event can start to Randomly happen after this amount of time has passed.\nRaiders Guaranteed event also only starts calculating after this time has passed.",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option1 	=	"Start Immediately",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option2 	= "After Day 1",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option3 	= "After Day 1",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option4 	= "After Day 5",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option5 	= "After Day 10",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option6 	= "After Day 15",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option7 	= "After Day 20",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option8 	= "After Day 25",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option9 	= "After Day 30",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option10 = "After Day 35",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option11 = "After Day 40",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option12 =	"After Day 45",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option13 =	"After Day 50",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option14 =	"After Day 55",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option15 =	"After Day 60",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option16 =	"After Day 65",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option17 =	"After Day 70",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option18 =	"After Day 75",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option19 =	"After Day 80",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option20 =	"After Day 85",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option21 =	"After Day 90",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option22 =	"After Day 95",
+			Sandbox_SuperiorSurvivors_RaidersAfter_option23 = "Never",
+
+		Sandbox_SuperiorSurvivors_RaidersChance = "Spawn Chance"
+			Sandbox_SuperiorSurvivors_RaidersChance_tooltip = "The chance a Raider event will happen after the start date has passed."
+			Sandbox_SuperiorSurvivors_RaidersChance_option1 = "Very Low",
+			Sandbox_SuperiorSurvivors_RaidersChance_option2 = "Low",
+			Sandbox_SuperiorSurvivors_RaidersChance_option3 = "Normal",
+			Sandbox_SuperiorSurvivors_RaidersChance_option4 = "High",
+			Sandbox_SuperiorSurvivors_RaidersChance_option5 = "Very High",
+
+	Sandbox_SuperiorSurvivorsMisc = "Superior Survivors - Misc.",
+
+		Sandbox_SuperiorSurvivors_DisplayName = "Display NPC Names",
+			Sandbox_SuperiorSurvivors_DisplayName_tooltip = "Do you want to see the names of the NPCs displayed above their heads?",
+
+		Sandbox_SuperiorSurvivors_DisplayHostile = "Display Hostile Color",
+			Sandbox_SuperiorSurvivors_DisplayHostile_tooltip = "Do you want to know if an NPC is hostile or not?\nSetting this 'off' will prevent hostile NPC's names from glowing red",	
+
+		Sandbox_SuperiorSurvivors_RoleplayMessage = "Display Roleplay Messages",
+			Sandbox_SuperiorSurvivors_RoleplayMessage_tooltip = "This defines if messages of actions will be showed",	
+}

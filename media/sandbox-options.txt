@@ -2,7 +2,7 @@ VERSION = 1,
 
 option SuperiorSurvivorsSpawn.SpawnRate
 {
-	type = enum, numValues = 11, default = 6,
+	type = enum, numValues = 12, default = 7,
 	page = SuperiorSurvivorsSpawn, 
 	translation = SuperiorSurvivors_SpawnRate,valueTranslation = SuperiorSurvivors_SpawnRate,
 }
@@ -53,7 +53,7 @@ option SuperiorSurvivorsSpawn.SpawnWithWife
 {
 	type = boolean, default = false,
 	page = SuperiorSurvivorsSpawn,
-	 translation = SuperiorSurvivors_SpawnWithWife,
+	translation = SuperiorSurvivors_SpawnWithWife,
 }
 
 option SuperiorSurvivorsSpawn.ReadyForBattle
@@ -72,21 +72,21 @@ option SuperiorSurvivorsSpawn.PresetSurvivors
 
 option SuperiorSurvivorsAi.Friendliness
 {
-	type = enum, numValues = 5, default = 3,
+	type = enum, numValues = 6, default = 4,
 	page = SuperiorSurvivorsAi, 
 	translation = SuperiorSurvivors_Friendliness, valueTranslation = SuperiorSurvivors_Friendliness,
 }
 
 option SuperiorSurvivorsAi.Bravery
 {
-	type = enum, numValues = 5, default = 3,
+	type = enum, numValues = 4, default = 2,
 	page = SuperiorSurvivorsAi, 
 	translation = SuperiorSurvivors_Bravery, valueTranslation = SuperiorSurvivors_Bravery,
 }
 
 option SuperiorSurvivorsAi.NoHunger
 {
-	type = enum, numValues = 5, default = 3,
+	type = boolean, default = true,
 	page = SuperiorSurvivorsAi, 
 	translation = SuperiorSurvivors_NoHunger, valueTranslation = SuperiorSurvivors_NoHunger,
 }
@@ -140,18 +140,18 @@ option SuperiorSurvivorsCombat.InfiniteAmmo
 	translation = SuperiorSurvivors_InfiniteAmmo,
 }
 
-option SuperiorSurvivorsRaiders.RaidersAfter
-{
-	type = enum, numValues = 22, default = 6,
-	page = SuperiorSurvivorsRaiders, 
-	translation = SuperiorSurvivors_RaidersAfter, valueTranslation = SuperiorSurvivors_RaidersAfter,
-}
-
 option SuperiorSurvivorsRaiders.RaidersGuaranteed
 {
 	type = enum, numValues = 23, default = 6,
 	page = SuperiorSurvivorsRaiders, 
 	translation = SuperiorSurvivors_RaidersGuaranteed, valueTranslation = SuperiorSurvivors_RaidersGuaranteed,
+}
+
+option SuperiorSurvivorsRaiders.RaidersAfter
+{
+	type = enum, numValues = 23, default = 6,
+	page = SuperiorSurvivorsRaiders, 
+	translation = SuperiorSurvivors_RaidersAfter, valueTranslation = SuperiorSurvivors_RaidersAfter,
 }
 
 option SuperiorSurvivorsRaiders.RaidersChance
@@ -163,9 +163,9 @@ option SuperiorSurvivorsRaiders.RaidersChance
 
 option SuperiorSurvivorsMisc.DisplayName
 {
-	type = enum, numValues = 7, default = 1,
+	type = boolean, default = true,
 	page = SuperiorSurvivorsMisc,
-	translation = SuperiorSurvivors_DisplayName, valueTranslation = SuperiorSurvivors_DisplayName,
+	translation = SuperiorSurvivors_DisplayName,
 }
 
 option SuperiorSurvivorsMisc.DisplayHostile
