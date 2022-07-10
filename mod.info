@@ -1,0 +1,5 @@
+id=SuperiorSubparSurvivorsSandbox
+name=Superior Survivors Sandbox Options Add-on
+description=Sandbox Add-on for Superior Survivors
+require=SuperiorSubparSurvivors
+versionMin=41.71
