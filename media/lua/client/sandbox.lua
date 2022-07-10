@@ -81,10 +81,7 @@ local function changeOptions()
   end
 
   debugSandboxFunction("changeOptions")
-  Events.OnGameStart.Remove(changeOptions)
+  Events.OnInitWorld.Remove(changeOptions)
 end
 
--- Events.OnLoad.Add(change)
-Events.OnGameStart.Add(changeOptions)
--- Events.OnInitWorld.Add(change)
---Events.OnGameBoot.Add(change)
+Events.OnInitWorld.Add(changeOptions)
