@@ -149,7 +149,7 @@ option SuperiorSurvivorsRaiders.RaidersGuaranteed
 
 option SuperiorSurvivorsRaiders.RaidersAfter
 {
-	type = enum, numValues = 23, default = 6,
+	type = enum, numValues = 22, default = 6,
 	page = SuperiorSurvivorsRaiders, 
 	translation = SuperiorSurvivors_RaidersAfter, valueTranslation = SuperiorSurvivors_RaidersAfter,
 }
