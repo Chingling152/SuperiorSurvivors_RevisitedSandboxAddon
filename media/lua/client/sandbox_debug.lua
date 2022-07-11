@@ -1,8 +1,8 @@
 local debugOptions = {
-  enabled = false,
-  enableFunctions = false,
-  enableScope = false,
-  enableProgress = false,
+  enabled = true,
+  enableFunctions = true,
+  enableScope = true,
+  enableProgress = true,
 }
 
 function debugSandbox(text)

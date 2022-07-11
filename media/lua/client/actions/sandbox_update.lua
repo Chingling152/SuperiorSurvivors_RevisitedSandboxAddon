@@ -1,5 +1,6 @@
 require "0_Utilities/SuperSurvivorUtilities.lua"
 require "4_UI/SuperSurvivorOptions.lua"
+require "sandbox_debug.lua"
 
 local sandboxConfigs = {
   "Spawn", 
@@ -74,6 +75,8 @@ function addSandboxOptions()
   -- local presets = getSandboxPresets()
 
   debugSandboxFunction("changeOptions")
+
+  createCheckpoint()
   
   for index, config in ipairs(sandboxConfigs) do
     debugSandboxProgress("changing configs", index, #sandboxConfigs)
@@ -81,5 +84,6 @@ function addSandboxOptions()
   end
 
   debugSandboxFunction("changeOptions")
+
   Events.OnInitWorld.Remove(changeOptions)
 end
