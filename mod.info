@@ -1,5 +1,6 @@
 id=SuperiorSubparSurvivorsSandbox
 name=Superior Survivors Sandbox Options Add-on
+poster=poster.png
 description=Sandbox Add-on for Superior Survivors
 require=SuperiorSubparSurvivors
 versionMin=41.71

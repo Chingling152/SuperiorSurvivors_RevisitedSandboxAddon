@@ -5,5 +5,5 @@ Supports [Change Sandbox Options](https://steamcommunity.com/sharedfiles/filedet
 
 ## Roadmap
 * **v0.1** [Sandbox configs](https://github.com/Chingling152/SuperiorSurvivors_RevisitedSandboxAddon/milestone/1)
-* **v0.2** [Sandbox presets](https://github.com/Chingling152/SuperiorSurvivors_RevisitedSandboxAddon/milestone/2)
-* **v0.3** [Localization & bye to the old menu](https://github.com/Chingling152/SuperiorSurvivors_RevisitedSandboxAddon/milestone/3)
+* **v0.2** [Sandbox presets](https://github.com/Chingling152/SuperiorSurvivors_RevisitedSandboxAddon/milestone/3)
+* **v0.3** [Localization & bye to the old menu](https://github.com/Chingling152/SuperiorSurvivors_RevisitedSandboxAddon/milestone/2)
