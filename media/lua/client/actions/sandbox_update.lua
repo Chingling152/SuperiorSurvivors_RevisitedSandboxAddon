@@ -17,6 +17,13 @@ local specialCases = {
   "GunSpawnRate", "WepSpawnRate",
 }
 
+local unchangedConfigs = {
+  "SSHotkey1","SSHotkey2",
+  "SSHotkey3","SSHotkey4",
+
+  "DebugOptions","DebugOption_DebugSay","DebugOption_DebugSay_Distance", 
+}
+
 local function setConfigValue(configName, optionValue)
   local type = type(optionValue)
 
@@ -30,6 +37,8 @@ local function setConfigValue(configName, optionValue)
     end
   elseif has_value(specialCases,configName) then
     value = optionValue + 1
+  elseif has_value(unchangedConfigs, configName) then
+    value = SuperSurvivorOptions[configName]
   else 
     value = optionValue
   end -- TODO: deal with integers without break enums
