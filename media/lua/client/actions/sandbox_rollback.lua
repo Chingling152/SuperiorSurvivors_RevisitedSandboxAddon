@@ -7,7 +7,6 @@ function rollback()
   debugSandboxFunction("rollback")
   
   local checkpoint = loadCheckpointOptions()
-  print(checkpoint)
   if (checkpoint == nil) or (size(checkpoint) == 0) then
 		debugSandbox("checkpoint file is empty or nil")
     debugSandboxFunction("rollback")
@@ -53,7 +52,7 @@ function loadCheckpointOptions()
 		if(fileTable[values[1]] == nil) then 
 			fileTable[values[1]] = {} 
 		end
-		fileTable[values[1]]=tonumber(values[2])
+		fileTable[values[1]] = tonumber(values[2])
     debugSandbox("loading config : " .. tostring(values[1]))
 		
 		scanLine = readFile:readLine()
