@@ -3,19 +3,22 @@ require "4_UI/SuperSurvivorOptions.lua"
 require "sandbox_debug.lua"
 
 local checkpointFile = "SurvivorOptionsCheckpoint.lua"
-function rollback()
-  debugSandboxFunction("rollback")
-  
-  local checkpoint = loadCheckpointOptions()
-  if (checkpoint == nil) or (size(checkpoint) == 0) then
-		debugSandbox("checkpoint file is empty or nil")
-    debugSandboxFunction("rollback")
-    return
-  end
-  
-  SuperSurvivorOptions = checkpoint
-  SaveSurvivorOptions()
-  debugSandboxFunction("rollback")
+
+function createCheckpoint()
+  debugSandboxFunction("createCheckpoint")
+
+  local writeFile = getFileWriter(checkpointFile, true, false)
+
+	for index,value in pairs(SuperSurvivorOptions) do
+	
+    local line = tostring(index) .. " " .. tostring(value)
+    debugSandbox("writing line : " .. line)
+		writeFile:write(line .. "\r\n")
+	
+	end
+	writeFile:close();
+
+  debugSandboxFunction("createCheckpoint")
 end
 
 local function doesOptionsCheckpointFileExist()
@@ -29,7 +32,7 @@ local function doesOptionsCheckpointFileExist()
   end
 end
 
-function loadCheckpointOptions()
+local function loadCheckpointOptions()
   debugSandboxFunction("loadCheckpointOptions")
 	
 	local fileTable = {}
@@ -69,18 +72,17 @@ function loadCheckpointOptions()
 	return fileTable
 end
 
-function createCheckpoint()
-  debugSandboxFunction("createCheckpoint")
-
-  local writeFile = getFileWriter(checkpointFile, true, false)
-
-	for index,value in pairs(SuperSurvivorOptions) do
-    local line = tostring(index) .. " " .. tostring(value)
-    debugSandbox("writing line : " .. line)
-		writeFile:write(line .. "\r\n");
-	
-	end
-	writeFile:close();
-
-  debugSandboxFunction("createCheckpoint")
+function rollbackSandboxOptions()
+  debugSandboxFunction("rollback")
+  
+  local checkpoint = loadCheckpointOptions()
+  if (checkpoint == nil) or (size(checkpoint) == 0) then
+		debugSandbox("checkpoint file is empty or nil")
+    debugSandboxFunction("rollback")
+    return
+  end
+  
+  SuperSurvivorOptions = checkpoint
+  SaveSurvivorOptions()
+  debugSandboxFunction("rollback")
 end

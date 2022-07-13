@@ -1,3 +1,5 @@
 Events.OnInitWorld.Add(addSandboxOptions)
 
-Events.OnMainMenuEnter.Add(rollback)
+Events.OnMainMenuEnter.Add(rollbackSandboxOptions)
+
+Events.OnMainMenuEnter.Add(loadSandboxPresets)
