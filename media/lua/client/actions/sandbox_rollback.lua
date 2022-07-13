@@ -3,6 +3,13 @@ require "4_UI/SuperSurvivorOptions.lua"
 require "sandbox_debug.lua"
 
 local checkpointFile = "SurvivorOptionsCheckpoint.lua"
+local unchangedConfigs = { 
+  "SSHotkey1","SSHotkey2",
+  "SSHotkey3","SSHotkey4",
+
+  "DebugOptions","DebugOption_DebugSay","DebugOption_DebugSay_Distance", 
+}
+
 function rollback()
   debugSandboxFunction("rollback")
   
@@ -52,8 +59,14 @@ function loadCheckpointOptions()
 		if(fileTable[values[1]] == nil) then 
 			fileTable[values[1]] = {} 
 		end
-		fileTable[values[1]] = tonumber(values[2])
-    debugSandbox("loading config : " .. tostring(values[1]))
+
+		debugSandbox("loading config : " .. tostring(values[1]))
+
+		if(has_value(unchangedConfigs,values[1]))then
+			fileTable[values[1]] = tonumber(SuperSurvivorOptions[values[1]])
+		else
+			fileTable[values[1]] = tonumber(values[2])
+		end
 		
 		scanLine = readFile:readLine()
     

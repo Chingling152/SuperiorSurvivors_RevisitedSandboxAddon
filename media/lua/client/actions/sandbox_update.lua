@@ -17,6 +17,7 @@ local specialCases = {
   "GunSpawnRate", "WepSpawnRate",
 }
 
+-- TODO: move to a commom place
 local unchangedConfigs = {
   "SSHotkey1","SSHotkey2",
   "SSHotkey3","SSHotkey4",
@@ -41,7 +42,7 @@ local function setConfigValue(configName, optionValue)
     value = SuperSurvivorOptions[configName]
   else 
     value = optionValue
-  end -- TODO: deal with integers without break enums
+  end 
 
   SuperSurvivorSetOption(configName, value)   
 
@@ -81,8 +82,6 @@ local function changeConfigs(config)
 end
 
 function addSandboxOptions()
-  -- local presets = getSandboxPresets()
-
   debugSandboxFunction("changeOptions")
 
   createCheckpoint()
