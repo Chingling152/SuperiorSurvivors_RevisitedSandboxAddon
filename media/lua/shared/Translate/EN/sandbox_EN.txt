@@ -155,11 +155,11 @@ Sandbox_EN = {
 
 		Sandbox_SuperiorSurvivors_RaidersChance = "Spawn Chance"
 			Sandbox_SuperiorSurvivors_RaidersChance_tooltip = "The chance a Raider event will happen after the start date has passed."
-			Sandbox_SuperiorSurvivors_RaidersChance_option1 = "Very Low",
-			Sandbox_SuperiorSurvivors_RaidersChance_option2 = "Low",
+			Sandbox_SuperiorSurvivors_RaidersChance_option1 = "Very High",
+			Sandbox_SuperiorSurvivors_RaidersChance_option2 = "High",
 			Sandbox_SuperiorSurvivors_RaidersChance_option3 = "Normal",
-			Sandbox_SuperiorSurvivors_RaidersChance_option4 = "High",
-			Sandbox_SuperiorSurvivors_RaidersChance_option5 = "Very High",
+			Sandbox_SuperiorSurvivors_RaidersChance_option4 = "Low",
+			Sandbox_SuperiorSurvivors_RaidersChance_option5 = "Very Low",
 
 	Sandbox_SuperiorSurvivorsMisc = "Superior Survivors - Misc.",
 
