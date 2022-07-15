@@ -26,8 +26,8 @@ local unchangedConfigs = {
 }
 
 local function setConfigValue(configName, optionValue)
-  local type = type(optionValue)
 
+  local type = type(optionValue)
   local value;
 
   if type == "boolean" then
@@ -58,12 +58,8 @@ local function changeConfig(configWindow,config)
     return
   end
   
-  debugSandboxScope(configName)
-
   local optionValue = SandboxVars[configWindow][sandboxConfig]
   setConfigValue(configName, optionValue)   
-  
-  debugSandboxScope(configName)
 end
 
 local function changeConfigs(config)
@@ -93,5 +89,6 @@ function addSandboxOptions()
 
   debugSandboxFunction("changeOptions")
 
+  SuperSurvivorOptions = LoadSurvivorOptions()
   Events.OnInitWorld.Remove(changeOptions)
 end

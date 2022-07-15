@@ -1,3 +1,3 @@
-Events.OnInitWorld.Add(addSandboxOptions)
+Events.OnGameStart.Add(addSandboxOptions)
 
 Events.OnMainMenuEnter.Add(rollback)
