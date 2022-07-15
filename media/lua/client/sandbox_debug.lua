@@ -1,10 +1,10 @@
 local isDebug = getCore():getDebug()
 
 local debugOptions = {
-  enabled = true,
-  enableFunctions = true,
-  enableScope = true,
-  enableProgress = true,
+  enabled = false,
+  enableFunctions = false,
+  enableScope = false,
+  enableProgress = false,
 }
 
 function debug(text)
@@ -37,10 +37,11 @@ function debugSandboxProgress(text,current,total)
   end
 end
 
+-- lag warning
 local enableFilesDebug = false
 if isDebug and enableFilesDebug then
 
-  function debugSandboxValue()
+  local function debugSandboxValue()
     debugSandboxFunction("debugSandboxValue")
 
     local sandboxConfigs = {
@@ -70,12 +71,45 @@ if isDebug and enableFilesDebug then
       end
     end
 
-    print(SandboxVars)
-
     debugSandboxFunction("debugSandboxValue")
   end
 
-  function debugSandboxFileValue()
+  local function debugCurrentOptions()
+    debugSandboxFunction("debugCurrentOptions")
+		debugSandbox("Option_Perception_Bonus : " .. tostring(Option_Perception_Bonus))
+
+		debugSandbox("Option_Display_Survivor_Names : " .. tostring(Option_Display_Survivor_Names))
+		debugSandbox("Option_Display_Hostile_Color : " .. tostring(Option_Display_Hostile_Color))
+		debugSandbox("Option_Panic_Distance : " .. tostring(Option_Panic_Distance))
+		debugSandbox("Option_ForcePVP : " .. tostring(Option_ForcePVP))
+		debugSandbox("Option_FollowDistance : " .. tostring(Option_FollowDistance))
+		debugSandbox("SuperSurvivorBravery : " .. tostring(SuperSurvivorBravery))
+		debugSandbox("RoleplayMessage : " .. tostring(RoleplayMessage))
+		debugSandbox("AlternativeSpawning : " .. tostring(AlternativeSpawning))
+		debugSandbox("AltSpawnGroupSize : " .. tostring(AltSpawnGroupSize))
+		debugSandbox("AltSpawnPercent : " .. tostring(AltSpawnPercent))
+		debugSandbox("NoPreSetSpawn : " .. tostring(NoPreSetSpawn))
+		debugSandbox("DebugOptions : " .. tostring(DebugOptions))
+		debugSandbox("DebugOption_DebugSay : " .. tostring(DebugOption_DebugSay))
+		debugSandbox("DebugOption_DebugSay_Distance : " .. tostring(DebugOption_DebugSay_Distanc))
+		debugSandbox("SafeBase : " .. tostring(SafeBase))
+		debugSandbox("SurvivorBases : " .. tostring(SurvivorBases))
+		debugSandbox("SuperSurvivorSpawnRate : " .. tostring(SuperSurvivorSpawnRate))
+		debugSandbox("ChanceToSpawnWithGun : " .. tostring(ChanceToSpawnWithGun))
+		debugSandbox("ChanceToSpawnWithWep : " .. tostring(ChanceToSpawnWithWep))
+		debugSandbox("ChanceToBeHostileNPC : " .. tostring(ChanceToBeHostileNPC))
+		debugSandbox("MaxChanceToBeHostileNPC : " .. tostring(MaxChanceToBeHostileNPC))
+		debugSandbox("SurvivorInfiniteAmmo : " .. tostring(SurvivorInfiniteAmmo))
+		debugSandbox("SurvivorHunger : " .. tostring(SurvivorHunger))
+		debugSandbox("SurvivorsFindWorkThemselves : " .. tostring(SurvivorsFindWorkThemselves))
+		debugSandbox("RaidsAtLeastEveryThisManyHours : " .. tostring(RaidsAtLeastEveryThisManyHou))
+		debugSandbox("RaidsStartAfterThisManyHours : " .. tostring(RaidsStartAfterThisManyHours))
+		debugSandbox("RaidChanceForEveryTenMinutes : " .. tostring(RaidChanceForEveryTenMinutes))
+
+    debugSandboxFunction("debugCurrentOptions")
+  end
+
+  local function debugSandboxFileValue()
     debugSandboxFunction("debugSandboxFileValue")
     local checkpoint = loadCheckpointOptions()
     
@@ -89,7 +123,7 @@ if isDebug and enableFilesDebug then
     debugSandboxFunction("debugSandboxFileValue")
   end
 
-  function debugCheckpointFileValue()
+  local function debugCheckpointFileValue()
     debugSandboxFunction("debugCheckpointFileValue")
     
     local checkpoint = LoadSurvivorOptions()
@@ -102,7 +136,7 @@ if isDebug and enableFilesDebug then
     debugSandboxFunction("debugCheckpointFileValue")
   end
 
-  function debugMenuValue()
+  local function debugMenuValue()
     debugSandboxFunction("debugMenuValue")
 
     for key,value in pairs(SuperSurvivorOptions) do
@@ -116,6 +150,7 @@ if isDebug and enableFilesDebug then
   
   Events.EveryTenMinutes.Add(debugSandboxValue)
   Events.EveryTenMinutes.Add(debugMenuValue)
+  Events.EveryTenMinutes.Add(debugCurrentOptions)
   Events.EveryTenMinutes.Add(debugSandboxFileValue)
   Events.EveryTenMinutes.Add(debugCheckpointFileValue)
 end

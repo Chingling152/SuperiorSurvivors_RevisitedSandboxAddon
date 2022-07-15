@@ -77,6 +77,53 @@ local function changeConfigs(config)
   debugSandboxFunction("changeSpawnConfigs") 
 end
 
+function changeSuperSurvivorOptionValues()
+  local gameVersion = getCore():getGameVersion()
+  local majorVersion = gameVersion:getMajor()
+  local minorVersion = gameVersion:getMinor()
+
+  local IsDamageBroken = ( majorVersion >= 41 and minorVersion> 50 and minorVersion < 53)
+  local IsNpcDamageBroken = (majorVersion >= 41 and minorVersion >= 53)
+
+  local getSandboxOption = function(section,position)
+    return SuperiorSurvivorsSandboxOptions[section][position][2]
+  end
+
+  SuperSurvivorSpawnRate        = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",1))
+  AlternativeSpawning           = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",2))
+  AltSpawnPercent               = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",3))
+  AltSpawnGroupSize             = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",4))
+  ChanceToSpawnWithGun          = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",5))
+  ChanceToSpawnWithWep          = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",6))
+  ChanceToBeHostileNPC          = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",7))
+  NoPreSetSpawn                 = SuperSurvivorGetOptionValue(getSandboxOption("Spawn",10))
+  
+  SuperSurvivorBravery          = SuperSurvivorGetOptionValue(getSandboxOption("Ai",2))
+  SurvivorHunger                = SuperSurvivorGetOptionValue(getSandboxOption("Ai",3))
+  Option_FollowDistance         = SuperSurvivorGetOptionValue(getSandboxOption("Ai",4))
+  SurvivorBases                 = SuperSurvivorGetOptionValue(getSandboxOption("Ai",5)) 
+  SafeBase                      = SuperSurvivorGetOptionValue(getSandboxOption("Ai",6))
+  SurvivorsFindWorkThemselves   = SuperSurvivorGetOptionValue(getSandboxOption("Ai",7))
+  Option_Perception_Bonus       = SuperSurvivorGetOptionValue(getSandboxOption("Ai",8))
+  
+  Option_ForcePVP               = SuperSurvivorGetOptionValue(getSandboxOption("Combat",1))
+  MaxChanceToBeHostileNPC       = SuperSurvivorGetOptionValue(getSandboxOption("Combat",2))
+  SurvivorInfiniteAmmo          = SuperSurvivorGetOptionValue(getSandboxOption("Combat",3))
+
+  Option_Display_Survivor_Names = SuperSurvivorGetOptionValue(getSandboxOption("Misc",1)) 
+  Option_Display_Hostile_Color  = SuperSurvivorGetOptionValue(getSandboxOption("Misc",2)) 
+  RoleplayMessage               = SuperSurvivorGetOptionValue(getSandboxOption("Misc",3)) 
+  
+  
+  RaidsAtLeastEveryThisManyHours= SuperSurvivorGetOptionValue(getSandboxOption("Raiders",1)) 
+  RaidsStartAfterThisManyHours  = SuperSurvivorGetOptionValue(getSandboxOption("Raiders",2))
+  RaidChanceForEveryTenMinutes  = SuperSurvivorGetOptionValue(getSandboxOption("Raiders",3))
+  if IsDamageBroken then
+    MaxChanceToBeHostileNPC = 0
+    RaidsStartAfterThisManyHours = 9999999
+  end
+end
+
 function addSandboxOptions()
   debugSandboxFunction("changeOptions")
 
@@ -90,5 +137,7 @@ function addSandboxOptions()
   debugSandboxFunction("changeOptions")
 
   SuperSurvivorOptions = LoadSurvivorOptions()
+
+  changeSuperSurvivorOptionValues()
   Events.OnInitWorld.Remove(changeOptions)
 end
