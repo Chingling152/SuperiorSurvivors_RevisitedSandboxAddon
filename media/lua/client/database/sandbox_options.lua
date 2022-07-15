@@ -73,6 +73,10 @@ SuperiorSurvivorsSandboxOptions = {
     {
       "PerceptionBonus",
       "Option_Perception_Bonus"
+    },
+    {
+      "FindWork",
+      "FindWork"
     }
   },
   ["Combat"] = {

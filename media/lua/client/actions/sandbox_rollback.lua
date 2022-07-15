@@ -10,21 +10,6 @@ local unchangedConfigs = {
   "DebugOptions","DebugOption_DebugSay","DebugOption_DebugSay_Distance", 
 }
 
-function rollback()
-  debugSandboxFunction("rollback")
-  
-  local checkpoint = loadCheckpointOptions()
-  if (checkpoint == nil) or (size(checkpoint) == 0) then
-		debugSandbox("checkpoint file is empty or nil")
-    debugSandboxFunction("rollback")
-    return
-  end
-  
-  SuperSurvivorOptions = checkpoint
-  SaveSurvivorOptions()
-  debugSandboxFunction("rollback")
-end
-
 local function doesOptionsCheckpointFileExist()
 	local fileTable = {}
 	local readFile = getFileReader(checkpointFile, false)
@@ -80,6 +65,21 @@ function loadCheckpointOptions()
   debugSandboxFunction("loadCheckpointOptions")
 
 	return fileTable
+end
+
+function rollback()
+  debugSandboxFunction("rollback")
+  
+  local checkpoint = loadCheckpointOptions()
+  if (checkpoint == nil) or (size(checkpoint) == 0) then
+		debugSandbox("checkpoint file is empty or nil")
+    debugSandboxFunction("rollback")
+    return
+  end
+  
+  SuperSurvivorOptions = checkpoint
+  SaveSurvivorOptions()
+  debugSandboxFunction("rollback")
 end
 
 function createCheckpoint()

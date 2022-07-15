@@ -58,7 +58,7 @@ Sandbox_EN = {
 
 	Sandbox_SuperiorSurvivorsAi = "Superior Survivors - AI",
 
-		Sandbox_SuperiorSurvivors_Friendliness = "Survivor Friendliness",
+		Sandbox_SuperiorSurvivors_Friendliness = "Friendliness",
 			Sandbox_SuperiorSurvivors_Friendliness_tooltip = This defines how easy it is to get a random survivor to join your team.\n Offering more gifts increase the chance of party invite acceptance, but each time you bug them with an invite, chance also goes down. So spamming invites does not do much good.
 			Sandbox_SuperiorSurvivors_Friendliness_option1 = "Desperate for Human Contact",
 			Sandbox_SuperiorSurvivors_Friendliness_option2 = "Very Friendly",
@@ -67,14 +67,14 @@ Sandbox_EN = {
 			Sandbox_SuperiorSurvivors_Friendliness_option5 = "Mean",
 			Sandbox_SuperiorSurvivors_Friendliness_option6 = "Very Mean",
 		
-		Sandbox_SuperiorSurvivors_Bravery = "Survivor Bravery",
+		Sandbox_SuperiorSurvivors_Bravery = "Bravery",
 			Sandbox_SuperiorSurvivors_Bravery_tooltip = "Determines how likely Survivors are to fight, rather than flee or avoid.",
 			Sandbox_SuperiorSurvivors_Bravery_option1 = "Cowardly",
 			Sandbox_SuperiorSurvivors_Bravery_option2 = "Normal",
 			Sandbox_SuperiorSurvivors_Bravery_option3 = "Brave",
 			Sandbox_SuperiorSurvivors_Bravery_option4 = "Very Brave",
 
-		Sandbox_SuperiorSurvivors_NoHunger = "Survivor Hunger & Thirst",
+		Sandbox_SuperiorSurvivors_NoHunger = "Hunger & Thirst",
 			Sandbox_SuperiorSurvivors_NoHunger_tooltip = "If Off survivors will never get hungery or thirsty. If On they will, though they will make attempts to find what they need on thier own.",
 
 		Sandbox_SuperiorSurvivors_FollowGlobalRange = "NPC - Follower Sprint Range",
@@ -89,6 +89,9 @@ Sandbox_EN = {
 		Sandbox_SuperiorSurvivors_PerceptionBonus = "[Experimental] NPC - Perception Boost",
 			Sandbox_SuperiorSurvivors_PerceptionBonus_tooltip = "This option should help NPCs 'know' when hostile things are close to them when it seems like they 'should have known'.\n (This option isn't fully tested but deemed decent results.)"
 	
+		Sandbox_SuperiorSurvivors_FindWork = "Auto Base Tasks",
+			Sandbox_SuperiorSurvivors_FindWork_tooltip = "If On, survivors in or near base may do some work tasks around the base on thier own if they find themselves with nothing to do. If off they will never decide to do tasks on thier own.",
+
 	Sandbox_SuperiorSurvivorsCombat = "Superior Survivors - Combat",
 
 		Sandbox_SuperiorSurvivors_ForcePvp = "PVP Mode"
@@ -98,7 +101,7 @@ Sandbox_EN = {
 			Sandbox_SuperiorSurvivors_HostileMaxChance_tooltip = "Chance to be hostile increases over time, but it will cap at this % and never go above this % Unsure if this option still works."
 
 		Sandbox_SuperiorSurvivors_InfiniteAmmo = "Survivor Infinite Ammo"
-			Sandbox_SuperiorSurvivors_InfiniteAmmo_tooltip = "If on Survivors do not neeed ammo to use guns, and never run out of ammo.\nIf Off survivors need rounds or boxes in thier inventory to shoot guns. And can be given more ammo via right click menu, and will attempt to find ammo near by when they run out of ammo."
+			Sandbox_SuperiorSurvivors_InfiniteAmmo_tooltip = "If on Survivors do not neeed ammo to use guns, and never run out of ammo.If Off survivors need rounds or boxes in thier inventory to shoot guns. And can be given more ammo via right click menu, and will attempt to find ammo near by when they run out of ammo."
 
 	Sandbox_SuperiorSurvivorsRaiders = "Superior Survivors - Raiders",
 
@@ -155,11 +158,11 @@ Sandbox_EN = {
 
 		Sandbox_SuperiorSurvivors_RaidersChance = "Spawn Chance"
 			Sandbox_SuperiorSurvivors_RaidersChance_tooltip = "The chance a Raider event will happen after the start date has passed."
-			Sandbox_SuperiorSurvivors_RaidersChance_option1 = "Very Low",
-			Sandbox_SuperiorSurvivors_RaidersChance_option2 = "Low",
+			Sandbox_SuperiorSurvivors_RaidersChance_option1 = "Very High",
+			Sandbox_SuperiorSurvivors_RaidersChance_option2 = "High",
 			Sandbox_SuperiorSurvivors_RaidersChance_option3 = "Normal",
-			Sandbox_SuperiorSurvivors_RaidersChance_option4 = "High",
-			Sandbox_SuperiorSurvivors_RaidersChance_option5 = "Very High",
+			Sandbox_SuperiorSurvivors_RaidersChance_option4 = "Low",
+			Sandbox_SuperiorSurvivors_RaidersChance_option5 = "Very Low",
 
 	Sandbox_SuperiorSurvivorsMisc = "Superior Survivors - Misc.",
 
