@@ -112,6 +112,13 @@ option SuperiorSurvivorsAi.SafeBases
 	translation = SuperiorSurvivors_SafeBases,
 }
 
+option SuperiorSurvivorsAi.FindWork
+{
+	type = boolean, default = true,
+	page = SuperiorSurvivorsAi, 
+	translation = SuperiorSurvivors_FindWork,
+}
+
 option SuperiorSurvivorsAi.PerceptionBonus
 {
 	type = boolean, default = false,
