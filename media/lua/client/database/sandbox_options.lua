@@ -2,6 +2,9 @@
 -- sandbox value
 -- superior survivors value
 
+--todo: improve data structure 
+-- (name, original_name, canBeChanged, specialCase)
+
 SuperiorSurvivorsSandboxOptions = {
   ["Spawn"] = {
     {

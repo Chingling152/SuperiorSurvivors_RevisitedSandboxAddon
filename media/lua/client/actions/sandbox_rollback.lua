@@ -67,7 +67,7 @@ function loadCheckpointOptions()
 	return fileTable
 end
 
-function rollback()
+function rollbackToMenuOptions()
   debugSandboxFunction("rollback")
   
   local checkpoint = loadCheckpointOptions()

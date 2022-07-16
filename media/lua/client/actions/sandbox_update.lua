@@ -2,6 +2,13 @@ require "0_Utilities/SuperSurvivorUtilities.lua"
 require "4_UI/SuperSurvivorOptions.lua"
 require "sandbox_debug.lua"
 
+---@alias sandboxConfigs
+---| "Spawn"
+---| "Ai"
+---| "Combat"
+---| "Raiders"
+---| "Misc"
+
 local sandboxConfigs = {
   "Spawn", 
   "Ai", 
@@ -25,6 +32,9 @@ local unchangedConfigs = {
   "DebugOptions","DebugOption_DebugSay","DebugOption_DebugSay_Distance", 
 }
 
+--- converts and sets the current value inside Survivor Options File (except unchangedConfigs)
+---@param configName string name of the config in the Survivor Options mod
+---@param optionValue string value to be changed
 local function setConfigValue(configName, optionValue)
 
   local type = type(optionValue)
@@ -49,7 +59,10 @@ local function setConfigValue(configName, optionValue)
   debugSandbox("config " .. configName .. " changed to value : " .. tostring(value))
 end
 
-local function changeConfig(configWindow,config)
+--- saves a config of a sandbox window
+---@param configWindow sandboxConfigs sandbox window name
+---@param config string sandbox field name 
+local function saveConfig(configWindow,config)
   local sandboxConfig = config[1]
   local configName = config[2]
   
@@ -62,7 +75,9 @@ local function changeConfig(configWindow,config)
   setConfigValue(configName, optionValue)   
 end
 
-local function changeConfigs(config)
+--- saves every config of a sandbox window
+---@param config sandboxConfigs sandbox window name
+local function saveConfigs(config)
   debugSandboxFunction("changeSpawnConfigs")
   debugSandboxFunction(config)
   
@@ -70,14 +85,15 @@ local function changeConfigs(config)
   local configs = SuperiorSurvivorsSandboxOptions[config]
   
   for index, config in ipairs(configs) do
-    changeConfig(configWindow, config)
+    saveConfig(configWindow, config)
   end
   
   debugSandboxFunction(config)
   debugSandboxFunction("changeSpawnConfigs") 
 end
 
-function changeSuperSurvivorOptionValues()
+--- Changes all fixed variables from SuperSurvivor
+local function changeSuperSurvivorOptionValues()
   local gameVersion = getCore():getGameVersion()
   local majorVersion = gameVersion:getMajor()
   local minorVersion = gameVersion:getMinor()
@@ -124,20 +140,39 @@ function changeSuperSurvivorOptionValues()
   end
 end
 
-function addSandboxOptions()
+--- Loads the current player square
+local function loadPlayerGridSquare()
+  local square = getPlayer():getSquare();
+  SuperSurvivorsLoadGridsquare(square)
+end
+
+--- replace all options from the original mo and reactivate SuperSurvivorsLoadGridsquare 
+local function overrideOptionReset()
+  debugSandboxFunction("overrideOptionReset")
+
+  SuperSurvivorOptions = LoadSurvivorOptions()
+  loadPlayerGridSquare()
+  changeSuperSurvivorOptionValues()
+  
+  Events.LoadGridsquare.Add(SuperSurvivorsLoadGridsquare)
+  
+  debugSandboxFunction("overrideOptionReset")
+end
+
+--- configures all options from sandbox choices
+function configureSandboxOptions()
   debugSandboxFunction("changeOptions")
 
   createCheckpoint()
   
   for index, config in ipairs(sandboxConfigs) do
     debugSandboxProgress("changing configs", index, #sandboxConfigs)
-    changeConfigs(config)
+    saveConfigs(config)
   end
 
+  overrideOptionReset()
+
+  Events.OnGameStart.Remove(changeOptions)
+
   debugSandboxFunction("changeOptions")
-
-  SuperSurvivorOptions = LoadSurvivorOptions()
-
-  changeSuperSurvivorOptionValues()
-  Events.OnInitWorld.Remove(changeOptions)
 end
