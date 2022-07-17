@@ -93,7 +93,7 @@ local function saveConfigs(config)
 end
 
 --- Changes all fixed variables from SuperSurvivor
-local function changeSuperSurvivorOptionValues()
+local function changeFixedOptionValues()
   local gameVersion = getCore():getGameVersion()
   local majorVersion = gameVersion:getMajor()
   local minorVersion = gameVersion:getMinor()
@@ -142,26 +142,35 @@ end
 
 --- Loads the current player square
 local function loadPlayerGridSquare()
-  local square = getPlayer():getSquare();
+  debugSandboxFunction("loadPlayerGridSquare")
+  
+  local square = getPlayer():getSquare()
   SuperSurvivorsLoadGridsquare(square)
+
+  debugSandboxFunction("loadPlayerGridSquare")
 end
 
---- replace all options from the original mo and reactivate SuperSurvivorsLoadGridsquare 
-local function overrideOptionReset()
+--- replace all options from the original mod and reactivate SuperSurvivorsLoadGridsquare 
+function overrideOptionReset(playerId)
   debugSandboxFunction("overrideOptionReset")
 
-  SuperSurvivorOptions = LoadSurvivorOptions()
+  configureSandboxOptions()
+
+  changeFixedOptionValues()  
+  SSCreatePlayerHandle(playerId)
+  
   loadPlayerGridSquare()
-  changeSuperSurvivorOptionValues()
+  changeFixedOptionValues()  
   
   Events.LoadGridsquare.Add(SuperSurvivorsLoadGridsquare)
+  --Events.EveryTenMinutes.Add(SuperSurvivorsRaiderManager)
   
   debugSandboxFunction("overrideOptionReset")
 end
 
 --- configures all options from sandbox choices
 function configureSandboxOptions()
-  debugSandboxFunction("changeOptions")
+  debugSandboxFunction("configureSandboxOptions")
 
   createCheckpoint()
   
@@ -170,9 +179,9 @@ function configureSandboxOptions()
     saveConfigs(config)
   end
 
-  overrideOptionReset()
+  --overrideOptionReset()
 
-  Events.OnGameStart.Remove(changeOptions)
+  --Events.OnGameStart.Remove(configureSandboxOptions)
 
-  debugSandboxFunction("changeOptions")
+  debugSandboxFunction("configureSandboxOptions")
 end
