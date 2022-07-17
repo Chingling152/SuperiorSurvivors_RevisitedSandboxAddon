@@ -67,7 +67,7 @@ function loadCheckpointOptions()
 	return fileTable
 end
 
-function rollback()
+function rollbackToMenuOptions()
   debugSandboxFunction("rollback")
   
   local checkpoint = loadCheckpointOptions()
@@ -91,8 +91,8 @@ function createCheckpoint()
     local line = tostring(index) .. " " .. tostring(value)
     debugSandbox("writing line : " .. line)
 		writeFile:write(line .. "\r\n");
-	
 	end
+	
 	writeFile:close();
 
   debugSandboxFunction("createCheckpoint")
