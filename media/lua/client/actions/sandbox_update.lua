@@ -81,8 +81,6 @@ local function changeConfigs(config)
 end
 
 function addSandboxOptions()
-  -- local presets = getSandboxPresets()
-
   debugSandboxFunction("changeOptions")
 
   createCheckpoint()
